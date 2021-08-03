@@ -11,12 +11,12 @@ describe('The Browser object model', () => {
 
   it('01-Has methods to interact with the window object', () => {
     // We are working with the jest dom implementation
-    expect(browser).toBeDefined()
+    expect(window).toBeDefined()
   })
 
   it('02-Is where operators live in the browser too',() => {
     const result = parseInt('4')
-    expect(window.parseInt('2') + 2 ).toEqual(3)
+    expect(window.parseInt('2') + 2 ).toEqual(result)
   })
 
   it('03-Is the global object', () => {
@@ -25,7 +25,8 @@ describe('The Browser object model', () => {
   })
 
   it('04-Has a navigator property', () => {
-    expect(window.navigator.userAgent).toMatch('Chrome')
+    console.log(window.navigator.userAgent)
+    expect(window.navigator.userAgent).toMatch('Mozilla')
   })
 
   it('05-Has a location property', () => {
@@ -39,8 +40,8 @@ describe('The Browser object model', () => {
     // location = site
     // location.assign(site)
     // location.replace(site)
-    expect(window.location.hostname).toEqual("localjost") 
-    expect(window.location.href).toEqual("http://localjost/") 
+    expect(window.location.hostname).toEqual("localhost") 
+    expect(window.location.href).toEqual("http://localhost/") 
   })
 
   it('06-Has a history property', () => {
@@ -53,6 +54,10 @@ describe('The Browser object model', () => {
   })
 
   it('07-Has a document property',() => {
+    window.document.documentElement.innerHTML = `
+    <p></p>
+    `
+    console.log(window.document.documentElement.outerHTML)
     expect(window.document).toBeDefined()
   })
 })

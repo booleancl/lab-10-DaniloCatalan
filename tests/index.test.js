@@ -22,6 +22,13 @@ test('The document HTML has the correct title', () => {
 
 test('The script changes the DOM content', () => {
   const helloScript = require('../src/assets/js/app.js')
+  // const myButton = document.querySelector('#my-button')
+  // myButton.click()
+  
   const title = document.getElementsByTagName('H1')[0].innerHTML
   expect(title).toEqual('Hello Friend')
 } )
+
+// test('abcdf', () => {
+//   console.log("bla bla", document.querySelector('H1').outerHTML)
+// })
