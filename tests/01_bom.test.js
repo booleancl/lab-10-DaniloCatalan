@@ -25,7 +25,7 @@ describe('The Browser object model', () => {
   })
 
   it('04-Has a navigator property', () => {
-    console.log(window.navigator.userAgent)
+    //console.log(window.navigator.userAgent)
     expect(window.navigator.userAgent).toMatch('Mozilla')
   })
 
@@ -57,7 +57,7 @@ describe('The Browser object model', () => {
     window.document.documentElement.innerHTML = `
     <p></p>
     `
-    console.log(window.document.documentElement.outerHTML)
+    //console.log(window.document.documentElement.outerHTML)
     expect(window.document).toBeDefined()
   })
 })
